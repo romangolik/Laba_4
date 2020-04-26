@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Warehouses>
+  <Warehouse>
+    <Number>1</Number>
+    <CostOfService>1000</CostOfService>
+    <Consignments>
+      <Consignment>
+        <Delivery>Intermediary</Delivery>
+        <Vegetables>
+          <Vegetable>
+            <Name>name1</Name>
+            <Country>country1</Country>
+            <NumberSeasonOfMaturation>1</NumberSeasonOfMaturation>
+          </Vegetable>
+        </Vegetables>
+        <DateOfDelivery>26.04.2020 20:44:35</DateOfDelivery>
+        <Count>1</Count>
+        <Price>100</Price>
+        <CostOfTransportation>1000</CostOfTransportation>
+      </Consignment>
+      <Consignment>
+        <Delivery>Provider</Delivery>
+        <Vegetable>
+          <Name>name2</Name>
+          <Country>country2</Country>
+          <NumberSeasonOfMaturation>2</NumberSeasonOfMaturation>
+        </Vegetable>
+        <DateOfDelivery>2020-04-26T20:44:52.1260169+03:00</DateOfDelivery>
+        <Count>2</Count>
+        <Price>200</Price>
+        <CostOfTransportation>2000</CostOfTransportation>
+      </Consignment>
+      <Consignment>
+        <Delivery>OwnFunds</Delivery>
+        <Vegetable>
+          <Name>name3</Name>
+          <Country>country3</Country>
+          <NumberSeasonOfMaturation>3</NumberSeasonOfMaturation>
+        </Vegetable>
+        <DateOfDelivery>2020-04-26T20:45:08.4304851+03:00</DateOfDelivery>
+        <Count>3</Count>
+        <Price>300</Price>
+        <CostOfTransportation>3000</CostOfTransportation>
+      </Consignment>
+    </Consignments>
+  </Warehouse>
+</Warehouses>
