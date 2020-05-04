@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class NewConsignment
+    partial class NewOrEditConsignment
     {
         /// <summary>
         /// Required designer variable.
@@ -105,28 +105,28 @@
             this.deliveryComboBox.Location = new System.Drawing.Point(210, 33);
             this.deliveryComboBox.Name = "deliveryComboBox";
             this.deliveryComboBox.Size = new System.Drawing.Size(200, 24);
-            this.deliveryComboBox.TabIndex = 6;
+            this.deliveryComboBox.TabIndex = 1;
             // 
             // dateOfDeliveryPicker
             // 
             this.dateOfDeliveryPicker.Location = new System.Drawing.Point(210, 120);
             this.dateOfDeliveryPicker.Name = "dateOfDeliveryPicker";
             this.dateOfDeliveryPicker.Size = new System.Drawing.Size(200, 22);
-            this.dateOfDeliveryPicker.TabIndex = 7;
+            this.dateOfDeliveryPicker.TabIndex = 3;
             // 
             // costOfTranspontationTextBox
             // 
             this.costOfTranspontationTextBox.Location = new System.Drawing.Point(210, 237);
             this.costOfTranspontationTextBox.Name = "costOfTranspontationTextBox";
             this.costOfTranspontationTextBox.Size = new System.Drawing.Size(200, 22);
-            this.costOfTranspontationTextBox.TabIndex = 8;
+            this.costOfTranspontationTextBox.TabIndex = 6;
             // 
             // priceTextBox
             // 
             this.priceTextBox.Location = new System.Drawing.Point(210, 197);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(200, 22);
-            this.priceTextBox.TabIndex = 9;
+            this.priceTextBox.TabIndex = 5;
             // 
             // countUpDown
             // 
@@ -138,7 +138,7 @@
             0});
             this.countUpDown.Name = "countUpDown";
             this.countUpDown.Size = new System.Drawing.Size(200, 22);
-            this.countUpDown.TabIndex = 10;
+            this.countUpDown.TabIndex = 4;
             // 
             // vegetableComboBox
             // 
@@ -146,14 +146,14 @@
             this.vegetableComboBox.Location = new System.Drawing.Point(210, 77);
             this.vegetableComboBox.Name = "vegetableComboBox";
             this.vegetableComboBox.Size = new System.Drawing.Size(200, 24);
-            this.vegetableComboBox.TabIndex = 11;
+            this.vegetableComboBox.TabIndex = 2;
             // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(71, 318);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -163,12 +163,12 @@
             this.btnClose.Location = new System.Drawing.Point(297, 318);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 30);
-            this.btnClose.TabIndex = 13;
+            this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // NewConsignment
+            // NewOrEditConsignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -187,10 +187,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NewConsignment";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "NewOrEditConsignment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewConsigment";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewOrEditConsignment_FormClosing);
             this.Load += new System.EventHandler(this.NewConsignment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.countUpDown)).EndInit();
             this.ResumeLayout(false);

@@ -124,15 +124,15 @@ namespace WindowsFormsApp1
             XElement lastRow = rows.Last();
             lastRow.AddAfterSelf(
                new XElement("Consignment",
-               new XElement("Delivery", Delivery),
+               new XElement("Delivery", delivery),
                new XElement("Vegetable",
                 new XElement("Name", vegetable.Name),
                 new XElement("Country", vegetable.Country),
                 new XElement("NumberSeasonOfMaturation", vegetable.NumberSeasonOfMaturation)),
-               new XElement("DateOfDelivery", DateOfDelivery),
-               new XElement("Count", Count),
-               new XElement("Price", Price),
-               new XElement("CostOfTransportation", CostOfTransportation)));
+               new XElement("DateOfDelivery", dateOfDelivery),
+               new XElement("Count", count),
+               new XElement("Price", price),
+               new XElement("CostOfTransportation", costOfTransportation)));
             xDocument.Save(fileName);
         }
 
@@ -163,31 +163,31 @@ namespace WindowsFormsApp1
                     {
                         case "Delivery":
                             reader.Read();
-                            consignment.Delivery = (Delivery)Enum.Parse(typeof(Delivery), reader.Value);
+                            consignment.delivery = (Delivery)Enum.Parse(typeof(Delivery), reader.Value);
                             break;
 
                         case "Vegetable":
-                            consignment.Vegetable = Vegetable.ReadVegetable(reader);
+                            consignment.vegetable = Vegetable.ReadVegetable(reader);
                             break;
 
                         case "DateOfDelivery":
                             reader.Read();
-                            consignment.DateOfDelivery = DateTime.Parse(reader.Value);
+                            consignment.dateOfDelivery = DateTime.Parse(reader.Value);
                             break;
 
                         case "Count":
                             reader.Read();
-                            consignment.Count = int.Parse(reader.Value);
+                            consignment.count = int.Parse(reader.Value);
                             break;
 
                         case "Price":
                             reader.Read();
-                            consignment.Price = int.Parse(reader.Value);
+                            consignment.price = int.Parse(reader.Value);
                             break;
 
                         case "CostOfTransportation":
                             reader.Read();
-                            consignment.CostOfTransportation = int.Parse(reader.Value);
+                            consignment.costOfTransportation = int.Parse(reader.Value);
                             break;
                     }
                 }
@@ -212,31 +212,31 @@ namespace WindowsFormsApp1
                     {
                         case "Delivery":
                             reader.Read();
-                            consignment.Delivery = (Delivery)Enum.Parse(typeof(Delivery), reader.Value);
+                            consignment.delivery = (Delivery)Enum.Parse(typeof(Delivery), reader.Value);
                             break;
 
                         case "Vegetable":
-                            consignment.Vegetable = Vegetable.ReadVegetable(reader);
+                            consignment.vegetable = Vegetable.ReadVegetable(reader);
                             break;
 
                         case "DateOfDelivery":
                             reader.Read();
-                            consignment.DateOfDelivery = DateTime.Parse(reader.Value);
+                            consignment.dateOfDelivery = DateTime.Parse(reader.Value);
                             break;
 
                         case "Count":
                             reader.Read();
-                            consignment.Count = int.Parse(reader.Value);
+                            consignment.count = int.Parse(reader.Value);
                             break;
 
                         case "Price":
                             reader.Read();
-                            consignment.Price = int.Parse(reader.Value);
+                            consignment.price = int.Parse(reader.Value);
                             break;
 
                         case "CostOfTransportation":
                             reader.Read();
-                            consignment.CostOfTransportation = int.Parse(reader.Value);
+                            consignment.costOfTransportation = int.Parse(reader.Value);
                             consignments.Add(consignment);
                             consignment = new Consignment();
                             break;
@@ -254,12 +254,12 @@ namespace WindowsFormsApp1
         {
             writer.WriteStartElement("Consignments");
                 writer.WriteStartElement("Consignment");
-                    writer.WriteElementString("Delivery", Delivery.ToString());
+                    writer.WriteElementString("Delivery", delivery.ToString());
                     Vegetable.WriteXml(writer);
-                    writer.WriteElementString("DateOfDelivery", DateOfDelivery.ToString());
-                    writer.WriteElementString("Count", Count.ToString());
-                    writer.WriteElementString("Price", Price.ToString());
-                    writer.WriteElementString("CostOfTransportation", CostOfTransportation.ToString());
+                    writer.WriteElementString("DateOfDelivery", dateOfDelivery.ToString());
+                    writer.WriteElementString("Count", count.ToString());
+                    writer.WriteElementString("Price", price.ToString());
+                    writer.WriteElementString("CostOfTransportation", costOfTransportation.ToString());
                 writer.WriteEndElement();
             writer.WriteEndElement();
         }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class NewWarehouse
+    partial class NewOrEditWarehouse
     {
         /// <summary>
         /// Required designer variable.
@@ -66,14 +66,14 @@
             this.costOfServiceTextBox.Location = new System.Drawing.Point(185, 82);
             this.costOfServiceTextBox.Name = "costOfServiceTextBox";
             this.costOfServiceTextBox.Size = new System.Drawing.Size(150, 22);
-            this.costOfServiceTextBox.TabIndex = 3;
+            this.costOfServiceTextBox.TabIndex = 2;
             // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(35, 129);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
-            this.btnSave.TabIndex = 4;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -83,12 +83,12 @@
             this.btnClose.Location = new System.Drawing.Point(255, 129);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 30);
-            this.btnClose.TabIndex = 5;
+            this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // NewWarehouse
+            // NewOrEditWarehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,10 +99,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.warehouseNumberTextBox);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NewWarehouse";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "NewOrEditWarehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewWarehouse";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewOrEditWarehouse_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

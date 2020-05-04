@@ -85,19 +85,19 @@ namespace WindowsFormsApp1
             XElement lastRow = rows.Last();
             lastRow.AddAfterSelf(
                new XElement("Vegetable",
-               new XElement("Name", Name),
-               new XElement("Country", Country),
-               new XElement("NumberSeasonOfMaturation", NumberSeasonOfMaturation.ToString())));
+               new XElement("Name", name),
+               new XElement("Country", country),
+               new XElement("NumberSeasonOfMaturation", numberSeasonOfMaturation.ToString())));
             xDocument.Save(fileName);
         }
 
         public List<Vegetable> GetAll(string fileName)
         {
-            InfoAboutWarehouse.vegetables.Clear();
+            InfoAboutWarehouse.Vegetables.Clear();
 
             ReadXml(XmlReader.Create(fileName));
 
-            return InfoAboutWarehouse.vegetables;
+            return InfoAboutWarehouse.Vegetables;
         }
 
         public void ReadXml(XmlReader reader)
@@ -118,23 +118,23 @@ namespace WindowsFormsApp1
                     {
                         case "Name":
                             reader.Read();
-                            vegetable.Name = reader.Value;
+                            vegetable.name = reader.Value;
                             break;
 
                         case "Country":
                             reader.Read();
-                            vegetable.Country = reader.Value;
+                            vegetable.country = reader.Value;
                             break;
 
                         case "NumberSeasonOfMaturation":
                             reader.Read();
-                            vegetable.NumberSeasonOfMaturation = Int32.Parse(reader.Value);
+                            vegetable.numberSeasonOfMaturation = Int32.Parse(reader.Value);
                             break;
                     }
                 }
                 if (reader.Name.Equals("Vegetable"))
                 {
-                    InfoAboutWarehouse.vegetables.Add(vegetable);
+                    InfoAboutWarehouse.Vegetables.Add(vegetable);
                 }
             }
             reader.Close();
@@ -144,9 +144,9 @@ namespace WindowsFormsApp1
         {
             writer.WriteStartElement("Vegetables");
                 writer.WriteStartElement("Vegetable");
-                    writer.WriteElementString("Name", Name);
-                    writer.WriteElementString("Country", Country);
-                    writer.WriteElementString("NumberSeasonOfMaturation", NumberSeasonOfMaturation.ToString());
+                    writer.WriteElementString("Name", name);
+                    writer.WriteElementString("Country", country);
+                    writer.WriteElementString("NumberSeasonOfMaturation", numberSeasonOfMaturation.ToString());
                 writer.WriteEndElement();
             writer.WriteEndElement();
         }
@@ -162,17 +162,17 @@ namespace WindowsFormsApp1
                     {
                         case "Name":
                             reader.Read();
-                            vegetable.Name = reader.Value;
+                            vegetable.name = reader.Value;
                             break;
 
                         case "Country":
                             reader.Read();
-                            vegetable.Country = reader.Value;
+                            vegetable.country = reader.Value;
                             break;
 
                         case "NumberSeasonOfMaturation":
                             reader.Read();
-                            vegetable.NumberSeasonOfMaturation = Int32.Parse(reader.Value);
+                            vegetable.numberSeasonOfMaturation = Int32.Parse(reader.Value);
                             break;
                     }
                 }

@@ -14,10 +14,22 @@ namespace WindowsFormsApp1
     public partial class InfoAboutWarehouse : Form
     {
         public static Warehouse warehouse;
-        public static List<Vegetable> vegetables = new List<Vegetable>();
+        private static List<Vegetable> vegetables = new List<Vegetable>();
         public InfoAboutWarehouse()
         {
             InitializeComponent();
+        }
+
+        public static List<Vegetable> Vegetables
+        {
+            get 
+            {
+                return vegetables;
+            }
+            set
+            {
+                vegetables = value;
+            }
         }
 
         private int indexOfWarehouse;
@@ -39,17 +51,16 @@ namespace WindowsFormsApp1
             listOfConsigments.Items.AddRange(warehouse.Consignments.ToArray());
         }
 
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            RefreshInfo();
-            btnEdit.Enabled = false;
-            Form1.warehouses[IndexOfWarehouse].WriteToFile("store/warehouses/warehouse_" + Form1.warehouses[IndexOfWarehouse].Number + ".xml");
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            NewConsignment newConsignment = new NewConsignment();
-            newConsignment.Show();
+            warehouse = Form1.warehouses[IndexOfWarehouse];
+            Consignment newConsignment = new Consignment();
+            NewOrEditConsignment newOrEditConsignment = new NewOrEditConsignment(newConsignment);
+            if (newOrEditConsignment.ShowDialog() == DialogResult.OK)
+            {
+                listOfConsigments.Items.Add(newConsignment.ToString());
+                warehouse.Consignments.Add(newConsignment);
+            }
         }
 
         private void listOfConsigments_SelectedIndexChanged(object sender, EventArgs e)
@@ -60,22 +71,17 @@ namespace WindowsFormsApp1
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            NewConsignment newConsignment = new NewConsignment();
             warehouse = Form1.warehouses[IndexOfWarehouse];
             int index = listOfConsigments.SelectedIndex;
             if (index == -1)
             {
                 index = warehouse.Consignments.Count - 1;
             }
-            newConsignment.dateOfDeliveryPicker.Value = warehouse.Consignments[index].DateOfDelivery;
-            newConsignment.countUpDown.Value = warehouse.Consignments[index].Count;
-            newConsignment.priceTextBox.Text = warehouse.Consignments[index].Price.ToString();
-            newConsignment.costOfTranspontationTextBox.Text = warehouse.Consignments[index].CostOfTransportation.ToString();
-            newConsignment.EditItemIndex = index;
-            newConsignment.Editable = true;
-            btnDelete.Enabled = false;
-            btnEdit.Enabled = false;
-            newConsignment.Show();
+            NewOrEditConsignment newOrEditConsignment = new NewOrEditConsignment(warehouse.Consignments[index]);
+            if (newOrEditConsignment.ShowDialog() == DialogResult.OK)
+            {
+                listOfConsigments.Items[index] = warehouse.Consignments[listOfConsigments.SelectedIndex].ToString();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

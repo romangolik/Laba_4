@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class NewVegetable
+    partial class NewOrEditVegetable
     {
         /// <summary>
         /// Required designer variable.
@@ -70,7 +70,7 @@
             this.btnSave.Location = new System.Drawing.Point(43, 163);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(80, 30);
-            this.btnSave.TabIndex = 5;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -80,7 +80,7 @@
             this.btnClose.Location = new System.Drawing.Point(300, 163);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(80, 30);
-            this.btnClose.TabIndex = 6;
+            this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -90,23 +90,23 @@
             this.seasonTextBox.Location = new System.Drawing.Point(250, 117);
             this.seasonTextBox.Name = "seasonTextBox";
             this.seasonTextBox.Size = new System.Drawing.Size(130, 22);
-            this.seasonTextBox.TabIndex = 7;
+            this.seasonTextBox.TabIndex = 3;
             // 
             // countryTextBox
             // 
             this.countryTextBox.Location = new System.Drawing.Point(107, 77);
             this.countryTextBox.Name = "countryTextBox";
             this.countryTextBox.Size = new System.Drawing.Size(273, 22);
-            this.countryTextBox.TabIndex = 8;
+            this.countryTextBox.TabIndex = 2;
             // 
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(95, 37);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(285, 22);
-            this.nameTextBox.TabIndex = 9;
+            this.nameTextBox.TabIndex = 1;
             // 
-            // NewVegetable
+            // NewOrEditVegetable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -119,10 +119,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "NewVegetable";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Name = "NewOrEditVegetable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewVegetable";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NewOrEditVegetable_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

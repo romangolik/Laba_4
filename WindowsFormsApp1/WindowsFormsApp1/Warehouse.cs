@@ -118,16 +118,16 @@ namespace WindowsFormsApp1
                     {
                         case "Number":
                             reader.Read();
-                            warehouse.Number = int.Parse(reader.Value);
+                            warehouse.number = int.Parse(reader.Value);
                             break;
 
                         case "CostOfService":
                             reader.Read();
-                            warehouse.CostOfService = int.Parse(reader.Value);
+                            warehouse.costOfService = int.Parse(reader.Value);
                             break;
 
                         case "Consignments":
-                            warehouse.Consignments = Consignment.ReadConsignment(reader);
+                            warehouse.consignments = Consignment.ReadConsignment(reader);
                             break;
                     }
                 }
@@ -141,8 +141,8 @@ namespace WindowsFormsApp1
         {
             writer.WriteStartElement("Warehouses");
              writer.WriteStartElement("Warehouse");
-              writer.WriteElementString("Number", Number.ToString());
-              writer.WriteElementString("CostOfService", CostOfService.ToString());
+              writer.WriteElementString("Number", number.ToString());
+              writer.WriteElementString("CostOfService", costOfService.ToString());
               if (consignments.Count > 0)
               {
                 consignments[0].WriteXml(writer);
@@ -153,7 +153,7 @@ namespace WindowsFormsApp1
 
             for (int i = 1; i < consignments.Count; i++)
             {
-                consignments[i].Append("store/warehouses/warehouse_" + Number + ".xml");
+                consignments[i].Append("store/warehouses/warehouse_" + number + ".xml");
             }
         }
 

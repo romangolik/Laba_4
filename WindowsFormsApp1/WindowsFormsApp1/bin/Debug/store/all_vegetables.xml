@@ -15,4 +15,9 @@
     <Country>country3</Country>
     <NumberSeasonOfMaturation>3</NumberSeasonOfMaturation>
   </Vegetable>
+  <Vegetable>
+    <Name>name4</Name>
+    <Country>country4</Country>
+    <NumberSeasonOfMaturation>4</NumberSeasonOfMaturation>
+  </Vegetable>
 </Vegetables>

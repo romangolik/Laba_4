@@ -2,7 +2,7 @@
 <Warehouses>
   <Warehouse>
     <Number>1</Number>
-    <CostOfService>1000</CostOfService>
+    <CostOfService>3000</CostOfService>
     <Consignments>
       <Consignment>
         <Delivery>Intermediary</Delivery>
@@ -13,34 +13,34 @@
             <NumberSeasonOfMaturation>1</NumberSeasonOfMaturation>
           </Vegetable>
         </Vegetables>
-        <DateOfDelivery>26.04.2020 20:44:35</DateOfDelivery>
+        <DateOfDelivery>03.05.2020 19:33:48</DateOfDelivery>
         <Count>1</Count>
-        <Price>100</Price>
-        <CostOfTransportation>1000</CostOfTransportation>
+        <Price>23</Price>
+        <CostOfTransportation>45</CostOfTransportation>
       </Consignment>
       <Consignment>
-        <Delivery>Provider</Delivery>
+        <Delivery>Intermediary</Delivery>
         <Vegetable>
           <Name>name2</Name>
           <Country>country2</Country>
           <NumberSeasonOfMaturation>2</NumberSeasonOfMaturation>
         </Vegetable>
-        <DateOfDelivery>2020-04-26T20:44:52.1260169+03:00</DateOfDelivery>
+        <DateOfDelivery>2020-05-03T19:35:51.7553364+03:00</DateOfDelivery>
         <Count>2</Count>
-        <Price>200</Price>
-        <CostOfTransportation>2000</CostOfTransportation>
+        <Price>34</Price>
+        <CostOfTransportation>56</CostOfTransportation>
       </Consignment>
       <Consignment>
-        <Delivery>OwnFunds</Delivery>
+        <Delivery>Intermediary</Delivery>
         <Vegetable>
           <Name>name3</Name>
           <Country>country3</Country>
           <NumberSeasonOfMaturation>3</NumberSeasonOfMaturation>
         </Vegetable>
-        <DateOfDelivery>2020-04-26T20:45:08.4304851+03:00</DateOfDelivery>
+        <DateOfDelivery>2020-05-03T19:36:02.0401871+03:00</DateOfDelivery>
         <Count>3</Count>
-        <Price>300</Price>
-        <CostOfTransportation>3000</CostOfTransportation>
+        <Price>45</Price>
+        <CostOfTransportation>67</CostOfTransportation>
       </Consignment>
     </Consignments>
   </Warehouse>

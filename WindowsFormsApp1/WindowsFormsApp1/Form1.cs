@@ -43,14 +43,13 @@ namespace WindowsFormsApp1
 
         private void btnAddWarehouse_Click(object sender, EventArgs e)
         {
-            NewWarehouse newWarehouse = new NewWarehouse();
-            newWarehouse.Show();
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            RefreshInfo();
-            btnEdit.Enabled = false;
+            Warehouse newWarehouse = new Warehouse();
+            NewOrEditWarehouse newOrEditWarehouse = new NewOrEditWarehouse(newWarehouse);
+            if (newOrEditWarehouse.ShowDialog() == DialogResult.OK)
+            {
+                listOfWarehouses.Items.Add(newWarehouse.ToString());
+                warehouses.Add(newWarehouse);
+            }
         }
 
         private void btnShowInfo_Click(object sender, EventArgs e)
@@ -68,21 +67,17 @@ namespace WindowsFormsApp1
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            NewWarehouse newWarehouse = new NewWarehouse();
             int index = listOfWarehouses.SelectedIndex;
             if (index == -1)
             {   
                 index = warehouses.Count - 1;
             }
-            newWarehouse.warehouseNumberTextBox.Text = warehouses[index].Number.ToString();
-            newWarehouse.costOfServiceTextBox.Text = warehouses[index].CostOfService.ToString();
-            newWarehouse.EditItemIndex = index;
+            NewOrEditWarehouse newOrEditWarehouse = new NewOrEditWarehouse(warehouses[index]);
             File.Delete("store/warehouses/warehouse_" + warehouses[index].Number + ".xml");
-            newWarehouse.Editable = true;
-            btnDelete.Enabled = false;
-            btnEdit.Enabled = false;
-            btnShowShortInfo.Enabled = false;
-            newWarehouse.Show();
+            if (newOrEditWarehouse.ShowDialog() == DialogResult.OK)
+            {
+                listOfWarehouses.Items[index] = warehouses[listOfWarehouses.SelectedIndex].ToString();
+            }
         }
 
         private void listOfWarehouse_SelectedIndexChanged(object sender, EventArgs e)

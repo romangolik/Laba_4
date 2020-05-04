@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,9 +50,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.IO.Abstractions, Version=10.0.0.0, Culture=neutral, PublicKeyToken=96bf224d23c43e59, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.IO.Abstractions.10.0.10\lib\net461\System.IO.Abstractions.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,23 +81,23 @@
     <Compile Include="ListOfVegetables.Designer.cs">
       <DependentUpon>ListOfVegetables.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewConsignment.cs">
+    <Compile Include="NewOrEditConsignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewConsignment.Designer.cs">
-      <DependentUpon>NewConsignment.cs</DependentUpon>
+    <Compile Include="NewOrEditConsignment.Designer.cs">
+      <DependentUpon>NewOrEditConsignment.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewVegetable.cs">
+    <Compile Include="NewOrEditVegetable.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewVegetable.Designer.cs">
-      <DependentUpon>NewVegetable.cs</DependentUpon>
+    <Compile Include="NewOrEditVegetable.Designer.cs">
+      <DependentUpon>NewOrEditVegetable.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewWarehouse.cs">
+    <Compile Include="NewOrEditWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewWarehouse.Designer.cs">
-      <DependentUpon>NewWarehouse.cs</DependentUpon>
+    <Compile Include="NewOrEditWarehouse.Designer.cs">
+      <DependentUpon>NewOrEditWarehouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,14 +118,14 @@
     <EmbeddedResource Include="ListOfVegetables.resx">
       <DependentUpon>ListOfVegetables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="newConsignment.resx">
-      <DependentUpon>NewConsignment.cs</DependentUpon>
+    <EmbeddedResource Include="NewOrEditConsignment.resx">
+      <DependentUpon>NewOrEditConsignment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewVegetable.resx">
-      <DependentUpon>NewVegetable.cs</DependentUpon>
+    <EmbeddedResource Include="NewOrEditVegetable.resx">
+      <DependentUpon>NewOrEditVegetable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewWarehouse.resx">
-      <DependentUpon>NewWarehouse.cs</DependentUpon>
+    <EmbeddedResource Include="NewOrEditWarehouse.resx">
+      <DependentUpon>NewOrEditWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,7 +139,6 @@
     <EmbeddedResource Include="SaveChanges.resx">
       <DependentUpon>SaveChanges.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -140,6 +151,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

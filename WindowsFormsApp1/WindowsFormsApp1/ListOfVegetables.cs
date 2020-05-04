@@ -21,19 +21,19 @@ namespace WindowsFormsApp1
         public void RefreshInfo()
         {
             vegetablesListBox.Items.Clear();
-            vegetablesListBox.Items.AddRange(InfoAboutWarehouse.vegetables.ToArray());
+            vegetablesListBox.Items.AddRange(InfoAboutWarehouse.Vegetables.ToArray());
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            NewVegetable newVegetable = new NewVegetable();
-            newVegetable.Show();
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            RefreshInfo();
-            btnEdit.Enabled = false;
+            Vegetable newVegetable = new Vegetable();
+            NewOrEditVegetable newOrEditVegetable = new NewOrEditVegetable(newVegetable);
+            if (newOrEditVegetable.ShowDialog() == DialogResult.OK)
+            {
+                vegetablesListBox.Items.Add(newVegetable.ToString());
+                InfoAboutWarehouse.Vegetables.Add(newVegetable);
+                newVegetable.WriteToFile("store/all_vegetables.xml");
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -42,16 +42,16 @@ namespace WindowsFormsApp1
             int index = vegetablesListBox.SelectedIndex;
             if (index == -1)
             {
-                index = InfoAboutWarehouse.vegetables.Count - 1;
+                index = InfoAboutWarehouse.Vegetables.Count - 1;
             }
-            InfoAboutWarehouse.vegetables.Remove(InfoAboutWarehouse.vegetables[index]);
+            InfoAboutWarehouse.Vegetables.Remove(InfoAboutWarehouse.Vegetables[index]);
             RefreshInfo();
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
             File.Delete("store/all_vegetables.xml");
-            for (int i = 0; i < InfoAboutWarehouse.vegetables.Count; i++)
+            for (int i = 0; i < InfoAboutWarehouse.Vegetables.Count; i++)
             {
-                InfoAboutWarehouse.vegetables[i].WriteToFile("store/all_vegetables.xml");
+                InfoAboutWarehouse.Vegetables[i].WriteToFile("store/all_vegetables.xml");
             }
         }
 
@@ -63,20 +63,21 @@ namespace WindowsFormsApp1
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            NewVegetable newVegetable = new NewVegetable();
             int index = vegetablesListBox.SelectedIndex;
             if (index == -1)
             {
-                index = InfoAboutWarehouse.vegetables.Count - 1;
+                index = InfoAboutWarehouse.Vegetables.Count - 1;
             }
-            newVegetable.nameTextBox.Text = InfoAboutWarehouse.vegetables[index].Name;
-            newVegetable.countryTextBox.Text = InfoAboutWarehouse.vegetables[index].Country;
-            newVegetable.seasonTextBox.Text = InfoAboutWarehouse.vegetables[index].NumberSeasonOfMaturation.ToString();
-            newVegetable.EditItemIndex = index;
-            newVegetable.Editable = true;
-            btnDelete.Enabled = false;
-            btnEdit.Enabled = false;
-            newVegetable.Show();
+            NewOrEditVegetable newOrEditVegetable = new NewOrEditVegetable(InfoAboutWarehouse.Vegetables[index]);
+            if (newOrEditVegetable.ShowDialog() == DialogResult.OK)
+            {
+                vegetablesListBox.Items[index] = InfoAboutWarehouse.Vegetables[vegetablesListBox.SelectedIndex].ToString();
+                File.Delete("store/all_vegetables.xml");
+                for (int i = 0; i < InfoAboutWarehouse.Vegetables.Count; i++)
+                {
+                    InfoAboutWarehouse.Vegetables[i].WriteToFile("store/all_vegetables.xml");
+                }
+            }
         }
 
         private void ListOfVegetables_Load(object sender, EventArgs e)
@@ -84,8 +85,8 @@ namespace WindowsFormsApp1
             if (File.Exists("store/all_vegetables.xml"))
             {
                 Vegetable vegetable = new Vegetable();
-                InfoAboutWarehouse.vegetables = vegetable.GetAll("store/all_vegetables.xml");
-                vegetablesListBox.Items.AddRange(InfoAboutWarehouse.vegetables.ToArray());
+                InfoAboutWarehouse.Vegetables = vegetable.GetAll("store/all_vegetables.xml");
+                vegetablesListBox.Items.AddRange(InfoAboutWarehouse.Vegetables.ToArray());
             }
         }
     }

@@ -7,11 +7,9 @@ D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFor
 D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
 D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
-D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.NewConsignment.resources
-D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.NewWarehouse.resources
 D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SaveChanges.resources
 D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.InfoAboutWarehouse.resources
 D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ListOfVegetables.resources
-D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.NewVegetable.resources
-D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.IO.Abstractions.dll
-D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.NewOrEditConsignment.resources
+D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.NewOrEditVegetable.resources
+D:\ЧНУ\ПАЛМ\2 курс\2 семестр\Lab_4\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.NewOrEditWarehouse.resources

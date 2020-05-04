@@ -5,7 +5,7 @@
     <CostOfService>2000</CostOfService>
     <Consignments>
       <Consignment>
-        <Delivery>Provider</Delivery>
+        <Delivery>Intermediary</Delivery>
         <Vegetables>
           <Vegetable>
             <Name>name3</Name>

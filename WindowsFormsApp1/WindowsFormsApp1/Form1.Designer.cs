@@ -31,7 +31,6 @@
             this.listOfWarehouses = new System.Windows.Forms.ListBox();
             this.btnAddWarehouse = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnShowInfo = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnShowShortInfo = new System.Windows.Forms.Button();
@@ -51,10 +50,10 @@
             // 
             // btnAddWarehouse
             // 
-            this.btnAddWarehouse.Location = new System.Drawing.Point(163, 364);
+            this.btnAddWarehouse.Location = new System.Drawing.Point(210, 363);
             this.btnAddWarehouse.Name = "btnAddWarehouse";
             this.btnAddWarehouse.Size = new System.Drawing.Size(90, 30);
-            this.btnAddWarehouse.TabIndex = 1;
+            this.btnAddWarehouse.TabIndex = 2;
             this.btnAddWarehouse.Text = "Add";
             this.btnAddWarehouse.UseVisualStyleBackColor = true;
             this.btnAddWarehouse.Click += new System.EventHandler(this.btnAddWarehouse_Click);
@@ -62,28 +61,18 @@
             // btnEdit
             // 
             this.btnEdit.Enabled = false;
-            this.btnEdit.Location = new System.Drawing.Point(547, 364);
+            this.btnEdit.Location = new System.Drawing.Point(498, 363);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(90, 30);
-            this.btnEdit.TabIndex = 2;
+            this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(451, 364);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(90, 30);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // btnShowInfo
             // 
             this.btnShowInfo.Enabled = false;
-            this.btnShowInfo.Location = new System.Drawing.Point(355, 364);
+            this.btnShowInfo.Location = new System.Drawing.Point(402, 363);
             this.btnShowInfo.Name = "btnShowInfo";
             this.btnShowInfo.Size = new System.Drawing.Size(90, 30);
             this.btnShowInfo.TabIndex = 4;
@@ -94,10 +83,10 @@
             // btnDelete
             // 
             this.btnDelete.Enabled = false;
-            this.btnDelete.Location = new System.Drawing.Point(259, 364);
+            this.btnDelete.Location = new System.Drawing.Point(306, 363);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 30);
-            this.btnDelete.TabIndex = 5;
+            this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -105,20 +94,20 @@
             // btnShowShortInfo
             // 
             this.btnShowShortInfo.Enabled = false;
-            this.btnShowShortInfo.Location = new System.Drawing.Point(37, 364);
+            this.btnShowShortInfo.Location = new System.Drawing.Point(84, 363);
             this.btnShowShortInfo.Name = "btnShowShortInfo";
             this.btnShowShortInfo.Size = new System.Drawing.Size(120, 30);
-            this.btnShowShortInfo.TabIndex = 6;
+            this.btnShowShortInfo.TabIndex = 1;
             this.btnShowShortInfo.Text = "ShowShortInfo";
             this.btnShowShortInfo.UseVisualStyleBackColor = true;
             this.btnShowShortInfo.Click += new System.EventHandler(this.btnShowShortInfo_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(643, 364);
+            this.btnSave.Location = new System.Drawing.Point(594, 363);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 30);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -132,13 +121,12 @@
             this.Controls.Add(this.btnShowShortInfo);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnShowInfo);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAddWarehouse);
             this.Controls.Add(this.listOfWarehouses);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Warehouses";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -148,7 +136,6 @@
         #endregion
         private System.Windows.Forms.Button btnAddWarehouse;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnShowInfo;
         private System.Windows.Forms.ListBox listOfWarehouses;
         private System.Windows.Forms.Button btnDelete;
